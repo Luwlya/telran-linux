@@ -1,0 +1,28 @@
+SELECT *
+FROM users
+WHERE users.email_id IS NULL;
+
+SELECT *
+FROM users
+WHERE Country=('China') AND is_blocked=TRUE;
+
+SELECT 
+	streams.title AS stream_title,
+    users.fullname AS streamer_fullname
+FROM streams
+JOIN users ON streams.user_id=users.user_id
+WHERE users.is_blocked=TRUE;
+
+SELECT 
+reactions.value,
+users.fullname AS user_fullname,
+streams.title AS stream_title
+FROM reactions
+JOIN users ON reactions.user_id=users.user_id
+JOIN streams ON reactions.stream_id=streams.stream_id
+LIMIT 3;
+
+SELECT *
+FROM donations
+JOIN users ON donations.donator_id=users.user_id
+WHERE users.is_blocked=TRUE;
