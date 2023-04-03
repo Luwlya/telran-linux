@@ -4,14 +4,14 @@ WHERE users.email_id IS NULL;
 
 SELECT *
 FROM users
-WHERE Country=('China') AND is_blocked=TRUE;
+WHERE Country=('China') AND is_blocked=FALSE;
 
 SELECT 
 	streams.title AS stream_title,
     users.fullname AS streamer_fullname
 FROM streams
 JOIN users ON streams.user_id=users.user_id
-WHERE users.is_blocked=FALSE;
+WHERE users.is_blocked=TRUE;
 
 SELECT 
 reactions.value,
