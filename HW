@@ -11,7 +11,7 @@ SELECT
     users.fullname AS streamer_fullname
 FROM streams
 JOIN users ON streams.user_id=users.user_id
-WHERE users.is_blocked=TRUE;
+WHERE users.is_blocked=FALSE;
 
 SELECT 
 reactions.value,
